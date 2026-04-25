@@ -110,11 +110,9 @@ install.packages(c(
 
 ### Update data paths
 
-Open `wc_analysis.Rmd` and update the file paths to point to your local `data/` folder:
-
 ```r
-wc_matches <- read.csv("data/matches.csv")
-teams      <- read.csv("data/teams.csv")
+wc_matches <- read.csv("matches.csv")
+teams      <- read.csv("teams.csv")
 ```
 
 ### Knit the analysis
@@ -134,7 +132,6 @@ rmarkdown::render("wc_analysis.Rmd", output_format = "pdf_document")
 | Proportion z-test (`prop.test`) | Test whether win rate differences between confederation pairs are statistically significant |
 | Bonferroni correction | Conservative multiple comparison correction — controls family-wise error rate |
 | Benjamini-Hochberg (BH) correction | Less conservative correction — controls false discovery rate, preferred for exploratory analysis |
-| Chi-square test of homogeneity | Overall test confirming confederations are not all performing equally before pairwise comparisons |
 | Hierarchical clustering | Ward's method on Euclidean distance using scaled win rate, goals per game, and goals against |
 | K-means clustering | k=3 solution on scaled win rate and goals per game (seed = 123, 25 restarts) |
 
